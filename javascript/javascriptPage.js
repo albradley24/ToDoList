@@ -1,23 +1,42 @@
-
-
-function allTasks()
+function initializePage()
 {
+	document.getElementById("completeRadio").disabled = true;
 	
+	//Show dashboard
+		//Total number of tasks:
+		//Total number of Incomplete tasks:
+		//Total number of Complete tasks:
+	
+	//Hide newTaskForm & markTaskComplete
 }
 
-function incompleteTasks()
+function displayAllTasks()
 {
-	
+    var xhttp = new XMLHttpRequest();
+	xhttp.open("GET", "php.php?function=displayAllTasks", false);
+	xhttp.send();
+	document.getElementById("table").innerHTML = xhttp.responseText;
 }
 
-function completeTasks()
+function displayIncompleteTasks()
 {
-	
+	var xhttp = new XMLHttpRequest();
+	xhttp.open("GET", "php.php?function=displayIncompleteTasks", false);
+	xhttp.send();
+	document.getElementById("table").innerHTML = xhttp.responseText;
 }
 
-function newTask()
+function displayCompleteTasks()
 {
-	/* hide and show form when user clicks 'Add New Task' button */
+	var xhttp = new XMLHttpRequest();
+	xhttp.open("GET", "php.php?function=displayCompleteTasks", false);
+	xhttp.send();
+	document.getElementById("table").innerHTML = xhttp.responseText;
+}
+
+function addNewTask()
+{
+	// hide and show form when user clicks 'Add New Task' button
 	var x = document.getElementById("newTaskForm");
     if (x.style.display === "none") 
 	{
@@ -31,33 +50,31 @@ function newTask()
 
 function submitNewTask()
 {
-	var valid = "";
+	var taskName = document.getElementById("taskName").value;
+	var taskDueDate = document.getElementById("taskDueDate").value;
+	var taskStatus = "Incomplete";
 	
-	/* error checking before form submission */
-	var x = document.forms["newTaskForm"]["taskName"].value;
-	var y = document.forms["newTaskForm"]["taskDueDate"].value;
-	
-    /* error checking on taskName value */
-	if (x == "") 
+	// error checking to make sure all values are filled in
+	if (taskName != "" && taskDueDate != "")
 	{
-        alert("Please fill in a task name.");
-        valid = "invalid";
-    }
-	
-	/* error checking on taskDueDate value */
-	if (y == "") 
-	{
-        alert("Please fill in a due date.");
-        valid = "invalid";
-    }
-	
-	/* if inputs pass validation checks, submit to table - else, do not submit */
-	if (valid == "valid")
-	{
-		alert("Valid");
+		alert('getting here first');
+		var xhttp = new XMLHttpRequest();
+		xhttp.open("POST", "php.php?function=submitNewTask", false);
+		xhttp.send();
+		document.getElementById("table").innerHTML = xhttp.responseText;
 	}
 	else
 	{
-		alert("Invalid");
+		alert("One or more invalid values. Please fill in all values then resubmit.");
 	}
 }
+
+/*
+function markTaskComplete()
+{
+	var xhttp = new XMLHttpRequest();
+	xhttp.open("PUT", "php.php?function=markTaskComplete", false);
+	xhttp.send();
+	alert(xhttp.responseText);
+}
+*/
