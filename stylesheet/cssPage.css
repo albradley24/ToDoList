@@ -1,0 +1,58 @@
+html
+{
+	background-color: white;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
+body
+{
+	border: 4px solid black;
+	background-color: white;
+}
+
+h1		/* title */
+{
+	color: black;
+	text-align: center;
+	text-decoration: underline;
+}
+
+#buttons		/* filter by status - complete, incomplete, all */
+{
+	padding-top: 20px;
+	text-align: center;
+}
+
+#newTaskForm		/* add new task */
+{
+	margin: 20px 250px 20px 250px;
+	text-align: left;
+	padding: 10px 0px 0px 50px;
+	border: 4px solid black;
+}
+
+#taskName, #taskDueDate, #incompleteRadio		/* add new task form labels */
+{
+	margin-top: 10px;
+}
+
+#submitNewTask
+{
+	margin: 10px;
+}
+
+table, th, td
+{
+    border: 4px solid black;
+    border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;	
+	padding: 20px 50px;
+}
+
+footer
+{
+	text-align: center;
+	padding-top: 20px;
+}

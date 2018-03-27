@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel=stylesheet href="C:\Users\Amanda\Desktop\ForwardHealthProject\stylesheet\CSSPage.css"></link>
+		<script src="javascript\JavascriptPage.js"></script>
+		<title>Web Developer Project</title>
+	</head>
+	<body>
+		<h1>To-Do Items:</h1>
+		<section>
+			<div id="buttons">
+				<button type="button" alt="allTasks" id="allTasks" onclick="allTasks()">All Tasks</button>
+				<button type="button" alt="incompleteTasks" id="incompleteTasks" onclick="incompleteTasks()">Incomplete Tasks</button>
+				<button type="button" alt="completeTasks" id="completeTasks" onclick="completeTasks()">Complete Tasks</button>
+				<button type="button" alt="newTask" id="newTask" onclick="newTask()">Add New Task</button>
+			</div>
+			<div id="newTaskForm">
+				<form>
+					<label> Task Name: </label>
+						<input name="taskName" type="text" alt="taskName" id="taskName" placeholder= "Make dinner" autofocus required><br>
+					<label> Due Date: </label>
+						<input name="taskDueDate" type="text" alt="taskDueDate" id="taskDueDate" placeholder= "12/31/2018" required><br>
+					<label> Status: </label>
+						<input type="radio" id="completeRadio">Complete</input>
+						<input type="radio" id="incompleteRadio" checked>Incomplete</input><br>
+					<button type="button" alt="submitNewTask" id="submitNewTask" onclick="submitNewTask()">Submit New Task</button>
+				</form>
+			</div>
+			<div id="taskTable">
+			</div>
+		</section>
+	</body>
+	<footer>
+		Web Developer Project by Amanda Bradley &copy 2018
+	</footer>
+</html>
